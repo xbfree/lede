@@ -39,18 +39,18 @@ jobs:
         run: |
           git remote add openwrt https://github.com/coolsnowwolf/lede.git
           git pull openwrt master
-          git remote -v      
+          git remote -v
      - name: 涡轮增雕进程
         run: |
           cd package
           mkdir openwrt-packages
           cd openwrt-packages
-          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git         
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
     # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-atmaterial=y
-          EOF       
+          EOF
       - name: Update feeds
        run: |
          ./scripts/feeds update -a
@@ -97,7 +97,7 @@ jobs:
 CONFIG_TARGET_ramips=y
 CONFIG_TARGET_ramips_mt7621=y
 CONFIG_TARGET_ramips_mt7621_DEVICE_d-team_newifi-d2=y
- EOF         
+ EOF
           # 固件压缩:
           # cat >> .config <<EOF
           # CONFIG_TARGET_IMAGES_GZIP=y
